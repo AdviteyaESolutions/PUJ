@@ -1,0 +1,13 @@
+1.   Types of Javascript  
+2.   Variables, data types, operators  
+3.   Conditional statements & loops  
+4.   PRACTICAL: Patterns, Fibonacci sequence etc  
+5.   What are Functions, different types of functions.   
+6.   Events & event  listeners  
+7.   String & string methods  
+8.   Array & array methods  
+9.   The forEach method  
+10.  Objects
+11.  DOM manipulations: traversing  
+12.  setTimeout & setInterval methods
+13.  Form Validation
