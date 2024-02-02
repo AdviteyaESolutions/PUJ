@@ -1,0 +1,18 @@
+What are functions?
+    - with arguments
+    - arguments having default values
+    - with return values
+    - anonymous functions
+    - arrow functions
+
+String methods: indexOf, lastIndexOf, includes, slice, substring, substr, trim, replace, replaceAll, split, toUpperCase, toLowerCase, padEnd, padStart
+
+Array Methods: push, pop, shift, unshift, splice, slice, indexOf, lastIndexOf, includes, reverse, join
+
+The forEach method
+
+HOFs
+
+DOM Manipulation: getElementById, querySelector, querySelectorAll
+
+setTimeout, setInterval

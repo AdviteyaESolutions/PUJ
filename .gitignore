@@ -5,3 +5,9 @@ pu3
 registrationForm.html
 style.css
 tableAdvanced.html
+
+# Ignore all mp4 files in the 'javascript' folder
+/javascript/*.mp4
+
+# Allow all other formats in the 'javascript' folder
+!/javascript/*
