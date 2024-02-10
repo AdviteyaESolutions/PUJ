@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabs</title>
+    <link rel="stylesheet" href="tabs.css" />
+  </head>
+
+  <body>
+    <div id="wrapper">
+      <div id="tabs">
+        <div class="anchors">
+          <a class="active" href="">HTML</a>
+          <a href="">CSS</a>
+          <a href="">JS</a>
+          <a href="">React</a>
+          <a href="">Node</a>
+        </div>
+        <div class="content">
+          <div class="con active">
+            <h3>HTML</h3>
+            <p>
+              The HyperText Markup Language or HTML is the standard markup
+              language for documents designed to be displayed in a web browser.
+              It defines the content and structure of web content. It is often
+              assisted by technologies such as Cascading Style Sheets (CSS) and
+              scripting languages such as JavaScript.
+            </p>
+            <p>
+              Web browsers receive HTML documents from a web server or from
+              local storage and render the documents into multimedia web pages.
+              HTML describes the structure of a web page semantically and
+              originally included cues for its appearance.
+            </p>
+          </div>
+          <div class="con">
+            <h3>CSS</h3>
+            <p>
+              Cascading Style Sheets (CSS) is a style sheet language used for
+              specifying the presentation and styling of a document written in a
+              markup language such as HTML or XML (including XML dialects such
+              as SVG, MathML or XHTML).[1] CSS is a cornerstone technology of
+              the World Wide Web, alongside HTML and JavaScript.
+            </p>
+            <p>
+              CSS is designed to enable the separation of content and
+              presentation, including layout, colors, and fonts.[3] This
+              separation can improve content accessibility;[further explanation
+              needed] provide more flexibility and control in the specification
+              of presentation characteristics; enable multiple web pages to
+              share formatting by specifying the relevant CSS in a separate .css
+              file, which reduces complexity and repetition in the structural
+              content; and enable the .css file to be cached to improve the page
+              load speed between the pages that share the file and its
+              formatting.
+            </p>
+          </div>
+          <div class="con">
+            <h3>JS</h3>
+            <p>
+              JavaScript, often abbreviated as JS, is a programming language and
+              core technology of the World Wide Web, alongside HTML and CSS. As
+              of 2024, 98.9% of websites use JavaScript on the client side for
+              webpage behavior,[10] often incorporating third-party libraries.
+              All major web browsers have a dedicated JavaScript engine to
+              execute the code on users' devices.
+            </p>
+            <p>
+              JavaScript is a high-level, often just-in-time compiled language
+              that conforms to the ECMAScript standard.[11] It has dynamic
+              typing, prototype-based object-orientation, and first-class
+              functions. It is multi-paradigm, supporting event-driven,
+              functional, and imperative programming styles. It has application
+              programming interfaces (APIs) for working with text, dates,
+              regular expressions, standard data structures, and the Document
+              Object Model (DOM).
+            </p>
+          </div>
+          <div class="con">
+            <h3>React</h3>
+            <p>
+              React (also known as React.js or ReactJS) is a free and
+              open-source front-end JavaScript library for building user
+              interfaces based on components. It is maintained by Meta (formerly
+              Facebook) and a community of individual developers and companies.
+            </p>
+          </div>
+          <div class="con">
+            <h3>Node</h3>
+            <p>
+              Node.js is a cross-platform, open-source JavaScript runtime
+              environment that can run on Windows, Linux, Unix, macOS, and more.
+              Node.js runs on the V8 JavaScript engine, and executes JavaScript
+              code outside a web browser.
+            </p>
+            <p>
+              Node.js lets developers use JavaScript to write command line tools
+              and for server-side scripting. The ability to run JavaScript code
+              on the server is often used to generate dynamic web page content
+              before the page is sent to the user's web browser. Consequently,
+              Node.js represents a "JavaScript everywhere" paradigm,[6] unifying
+              web-application development around a single programming language,
+              as opposed to using different languages for the server- versus
+              client-side programming.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const anchors = document.querySelectorAll(".anchors a");
+
+      for (let i = 0; i < anchors.length; i++) {
+        anchors[i].onclick = (event) => {
+          event.preventDefault();
+          //When we are dealing with anchor tag. Browser has a default functionality that when you click an anchor, it reloads the page. preventDefault stops that from happening.
+          //e written with the preventDefault, is the click event. We took the event as argument from JS and told the browser to stop the default action associated with this event.
+
+          document.querySelector("a.active").classList.remove("active");
+          anchors[i].classList.add("active");
+
+          //Showing the div
+
+          document.querySelector("div.active").classList.remove("active");
+          document.querySelectorAll(".con")[i].classList.add("active");
+        };
+      }
+    </script>
+  </body>
+</html>

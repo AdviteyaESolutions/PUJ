@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordions</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="accordion.css" />
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="accordion">
+        <div class="accord">
+          <h1>
+            Heading 1
+            <i class="fa-solid fa-square-minus"></i>
+          </h1>
+          <p class="visible">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum qui
+            esse nihil. Ea fugit aperiam ipsa consequatur! Perferendis nam
+            veritatis aspernatur dolores iure ad omnis enim modi? Possimus, iste
+            alias?Dignissimos quidem pariatur sequi labore sit est omnis magni
+            nihil non sint id corporis mollitia quasi tempore, explicabo,
+            dolorem vero odio quae dolores delectus eos obcaecati, autem animi.
+            Assumenda, magnam.
+          </p>
+        </div>
+        <div class="accord">
+          <h1>
+            Heading 2
+            <i class="fa-solid fa-square-plus"></i>
+          </h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe iste,
+            doloribus sed corporis non consequatur voluptatibus reprehenderit
+            totam, natus id assumenda quis quasi, harum doloremque delectus.
+            Exercitationem ab a molestiae.Dicta suscipit id odit cum et laborum
+            hic, illo, placeat corrupti quas quaerat libero voluptatibus eaque
+            saepe eos, velit beatae voluptatum ipsa doloremque debitis possimus?
+            Saepe incidunt quod molestiae dolores.
+          </p>
+        </div>
+        <div class="accord">
+          <h1>
+            Heading 3
+            <i class="fa-solid fa-square-plus"></i>
+          </h1>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati
+            quidem ad blanditiis nesciunt et maiores eum debitis exercitationem
+            accusamus dignissimos, quae minus alias, magnam, consequuntur minima
+            pariatur dolorem deserunt soluta.Soluta laudantium quas fuga
+            exercitationem deserunt! Soluta, commodi nesciunt eaque, explicabo
+            culpa omnis ab quam est adipisci inventore quidem nam, suscipit
+            vero. Ipsa nam qui, soluta est minima vero mollitia.
+          </p>
+        </div>
+        <div class="accord">
+          <h1>
+            Heading 4
+            <i class="fa-solid fa-square-plus"></i>
+          </h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore
+            error vel iusto expedita. Corporis, esse excepturi temporibus
+            molestias inventore nemo illum, eligendi voluptas repellendus modi
+            iure consequuntur animi, accusamus quibusdam.Aliquam quibusdam
+            impedit optio laboriosam iusto, exercitationem assumenda ipsa
+            aspernatur, doloribus provident architecto ipsum autem quos odit
+            nobis consequuntur molestias tenetur minus ab delectus laborum animi
+            deserunt! Deserunt, hic enim.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+
+      //TRAVERSING:
+      // classList: add, remove, contains
+      // children, parentElement, nextElementSibling, previousElementSibling
+
+      //setTimeout, setInterval
+      
+      const plus = document.querySelectorAll(".accord h1 i");
+
+      for (let i = 0; i < plus.length; i++) {
+        plus[i].onclick = function () {
+          const para = plus[i].parentElement.nextElementSibling;
+          if (para.classList.contains("visible")) {
+            //para ko gayab karna hai
+            //visible class cheen lo
+            para.classList.remove("visible");
+
+            //sign - minus to plus
+            plus[i].classList.remove("fa-square-minus");
+            plus[i].classList.add("fa-square-plus");
+          } else {
+            //Agar koi dusra para show h,
+            //phle use hide karo
+            const allPara = document.querySelectorAll("p");
+            for (let i = 0; i < allPara.length; i++) {
+              if (allPara[i].classList.contains("visible")) {
+                allPara[i].classList.remove("visible");
+
+                allPara[i].previousElementSibling.children[0].classList.remove(
+                  "fa-square-minus"
+                );
+                allPara[i].previousElementSibling.children[0].classList.add(
+                  "fa-square-plus"
+                );
+              }
+            }
+
+            //para ko show karna hai
+
+            para.classList.add("visible");
+
+            //sign - plus to minus
+            plus[i].classList.remove("fa-square-plus");
+            plus[i].classList.add("fa-square-minus");
+          }
+        };
+      }
+    </script>
+  </body>
+</html>
