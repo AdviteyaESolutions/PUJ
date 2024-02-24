@@ -81,7 +81,43 @@
       </div>
     </div>
 
-    
+    <script>
+      // Traversing
+      // children, parentElement, nextElementSibling, previousElementSibling
+      // classList: add, remove, contains
 
+
+      const icons = document.querySelectorAll("i");
+
+      icons.forEach((icon) => {
+        icon.addEventListener("click", () => {
+          const para = icon.parentElement.nextElementSibling;
+          if (para.classList.contains("visible")) {
+            // hide para
+            para.classList.remove("visible");
+            // change sign to plus
+            icon.classList.add("fa-square-plus");
+            icon.classList.remove("fa-square-minus");
+          } else {
+            // check previously opened para
+            const paragraphs = document.querySelectorAll("p");
+            paragraphs.forEach((par) => {
+              if (par.classList.contains("visible")){
+                par.classList.remove("visible");
+                //change sign to plus
+                par.previousElementSibling.children[0].classList.remove("fa-square-minus");
+                par.previousElementSibling.children[0].classList.add("fa-square-plus")
+              }
+            });
+
+            // show para
+            para.classList.add("visible");
+            // change sign to minus
+            icon.classList.remove("fa-square-plus");
+            icon.classList.add("fa-square-minus");
+          }
+        });
+      });
+    </script>
   </body>
 </html>

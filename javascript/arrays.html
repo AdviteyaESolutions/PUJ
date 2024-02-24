@@ -9,7 +9,9 @@
     <div id="wrapper">
       <input type="text" placeholder="Enter your name" />
       <button id="print">Print</button>
-      <button id="show">Show Names</button>
+      <button id="show">Show</button>
+
+      <p></p>
     </div>
 
     <script>
@@ -19,15 +21,26 @@
       //push, pop, shift, unshift, slice,splice, join
 
       // let num = [1, 3, 5];
+      // let num = new Array(1,3,5)
 
       // push - add in the end
       // unshift - add in the beginning
       // pop - removes 1 from the end
       // shift - removes 1 from the beginning
 
+      // num.push(7)
+      // num.unshift(7,8,9)
+      // num.pop()
+      // num.shift()
+      // document.write(num)
+
+      // let num = [1, 3, 5];
+
       // document.write(num.push(10,11));
+      // document.write(num.unshift(10,11));
 
       // document.write(num.pop());
+      // document.write(num.shift());
 
       // document.write(num.unshift(10,11));
       // document.write(num.shift());
@@ -35,21 +48,18 @@
       // let num = [1, 3, 5];
       // const n = num.pop()
       // num.unshift(n)
-      // document.write(++num[num.length-1] + ++num[num.length-2])
-      // document.write(num[2] + num[1])
+      // document.write(num[num.length-1]++ + num[num.length-2]++); //4
+      // document.write(num[2] + num[1]); //6
 
       // document.write(num[2] + "<br>")
       // document.write(num[1])
 
       let num = [1, 3, 5];
-      //   console.log(num.push(7));
-
       //   num.unshift(15, 6);
       //   num.pop();
       //   num.pop();
       //   num.push(10, 11);
       //   console.log(num.length);
-      // console.log(num[4])
 
       // num.shift();
       // num.unshift(14);
@@ -60,24 +70,30 @@
 
       //   console.log(num[0] + num[num.length - 1]);
 
-      const name = ["Shashwat", "Girraj", "Avi", "Ashish"];
+      // const name = ["Shashwat", "Girraj", "Avi", "Ashish"];
 
-      console.log(name.push("Github"));
+      // console.log(name.push("Github"));
 
       // console.log(name[0].length - name[name.length - 2].length)
 
-      const numbers = [1, 3, 5];
+      // const numbers = [1, 3, 5];
 
-      // let sum = 0
+      let sum = 0;
       // for(let i=0;i<numbers.length;i++){
       //   sum = sum + numbers[i]
       // }
 
+      // numbers.forEach( (num) => {
+      //   sum = sum + num;
+      // });
+
       // document.write(sum)
+
+      // this
 
       // let sum = 0;
       // numbers.forEach( (n) => {
-      //   sum += num;
+      //   sum = sum + num;
       // });
 
       // document.write(sum);
@@ -87,35 +103,36 @@
       // getElementById
       // querySelector
 
-      const print = document.querySelector("#print");
+      const btn = document.querySelector("#print");
       const show = document.querySelector("#show");
       const inp = document.querySelector("input");
-      const names = [];
+      const para = document.querySelector("p");
+      const numbers = [];
+
+      btn.onclick = function () {
+        numbers.push(inp.value);
+      };
+
+      show.onclick = () => {
+        para.innerHTML = numbers;
+      };
 
       // btn.onclick = () => {
       //   console.log("Rohit");
       // };
 
       print.onclick = () => {
-        names.push(inp.value)
-      }
+        names.push(inp.value);
+      };
 
-      7014192361
+      // 7014192361;
 
-      show.onclick = () => {
-        document.write(names)
-      }
-
+      // show.onclick = () => {
+      //   document.write(names);
+      // };
 
       //querySelectorAll
       // setTimeout, setInterval
-
-
-
-
-
-
-
 
       // let n = name.pop()
       // let num = n.length++

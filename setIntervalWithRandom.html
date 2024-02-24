@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>setInterval With Randomness</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <button>Click Me</button>
+    </div>
+
+    <script>
+      // console.log(Math)
+
+      // console.log(Math.floor(Math.random() * 9));
+
+      const numbers = [1, 3, 5, 7, 9, 11, 13, 15, 17];
+      const btn = document.querySelector("button");
+      btn.addEventListener("click", () => {
+        let num = [];
+        let interval = setInterval(() => {
+          if (index < numbers.length) {
+            // console.log(numbers[i++])
+            let i = Math.floor(Math.random() * numbers.length);
+
+            if (num.includes(i) === false) {
+              console.log(numbers[i]);
+              num.push(i);
+            }
+            
+          } else {
+            clearInterval(interval);
+          }
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>

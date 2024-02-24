@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter in JS</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <button id="inc">INCREMENT</button>
+      <p></p>
+      <button id="dec">DECREMENT</button>
+    </div>
+
+    <script>
+
+
+      let counter = 0;
+      const inc = document.querySelector("#inc");
+      const dec = document.querySelector("#dec");
+      const para = document.querySelector("p");
+
+      para.innerHTML = counter;
+
+      inc.addEventListener("click", () => {
+        para.innerHTML = ++counter;
+      });
+      dec.addEventListener("click", () => {
+        para.innerHTML = --counter;
+      });
+      //   dec.onclick
+    </script>
+  </body>
+</html>

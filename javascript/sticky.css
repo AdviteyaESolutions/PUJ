@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 4rem;
+  margin-top: 40px;
+}
+aside {
+  position: sticky;
+  top: 60px;
+  padding-top: 30px;
+  z-index: 1;
+  height: 100%;
+  max-height: max-content;
+}
+aside .intro{
+    padding-bottom: 3rem;
+}
+aside nav a{
+    padding: 0.5rem;
+    display: inline-block;
+}
+main {
+  position: relative;
+}
